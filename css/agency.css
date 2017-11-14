@@ -50,6 +50,7 @@ section {
   font-weight: 700; }
 
 .btn-xl {
+  margin-top: 100px;
   font-size: 18px;
   padding: 20px 40px; }
 
@@ -65,11 +66,13 @@ section {
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important; }
 
 ::-moz-selection {
-  background: #fed136;
+  background: #00ff33;
+  color: black;
   text-shadow: none; }
 
 ::selection {
-  background: #fed136;
+  background: #00ff33;
+  color: black;
   text-shadow: none; }
 
 img::selection {
@@ -88,13 +91,15 @@ body {
     right: 0;
     padding: 13px;
     text-transform: uppercase;
-    color: white;
-    border: 0;
-    background-color: #fed136;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    color: #33ff00;
+    border: 1px solid #33ff00;
+    background-color: black;
+
+    font-family: 'Terminal',monospace; }
   #mainNav .navbar-brand {
-    color: #00ff33;
-    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; }
+    color: white;
+    font-weight: 700;
+    font-family: 'Terminal',monospace; }
     #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
       color: #33ff00; }
   #mainNav .navbar-nav .nav-item .nav-link {
@@ -103,7 +108,7 @@ body {
     padding: 0.75em 0;
     letter-spacing: 1px;
     color: white;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    font-family: 'Terminal',monospace; }
     #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
       color: #33ff00; }
 
@@ -134,7 +139,7 @@ body {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+  background-color: black;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -147,10 +152,10 @@ header.masthead {
     padding-bottom: 100px; }
     header.masthead .intro-text .intro-lead-in {
       font-size: 22px;
-      font-style: italic;
       line-height: 22px;
       margin-bottom: 25px;
-      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      color: #33ff00;
+      font-family: Terminal,monospace; }
     header.masthead .intro-text .intro-heading {
       font-size: 50px;
       font-weight: 700;
@@ -165,10 +170,10 @@ header.masthead {
     padding-bottom: 200px; }
     header.masthead .intro-text .intro-lead-in {
       font-size: 40px;
-      font-style: italic;
       line-height: 40px;
       margin-bottom: 25px;
-      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      color: #33ff00;
+      font-family: Terminal,monospace; }
     header.masthead .intro-text .intro-heading {
       font-size: 75px;
       font-weight: 700;
@@ -511,3 +516,17 @@ ul.social-buttons {
     background-color: #212529; }
     ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
       background-color: #00ff33; }
+
+
+  .blink {
+   animation: blink 1s step-end infinite;
+}
+
+@keyframes blink{
+    from, to {
+    color: transparent;
+  }
+  50% {
+    color: #33ff00;
+  }
+}
