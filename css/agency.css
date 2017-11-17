@@ -11,9 +11,9 @@ p {
   line-height: 1.75; }
 
 a {
-  color: #fed136; }
+  color: #000; }
   a:hover {
-    color: #fec503; }
+    color: #00ff33; }
 
 .text-primary {
   color: #fed136 !important; }
@@ -137,6 +137,7 @@ body {
         padding: 12px 0; } }
 
 header.masthead {
+  padding-bottom: 115px;
   text-align: center;
   color: white;
   background-color: black;
@@ -153,7 +154,6 @@ header.masthead {
     header.masthead .intro-text .intro-lead-in {
       font-size: 22px;
       line-height: 22px;
-      margin-bottom: 25px;
       color: #33ff00;
       font-family: Terminal,monospace; }
     header.masthead .intro-text .intro-heading {
@@ -161,7 +161,6 @@ header.masthead {
       font-weight: 700;
       line-height: 50px;
       margin-top: 125px;
-      margin-bottom: 25px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 @media (min-width: 768px) {
@@ -171,14 +170,12 @@ header.masthead {
     header.masthead .intro-text .intro-lead-in {
       font-size: 40px;
       line-height: 40px;
-      margin-bottom: 25px;
       color: #33ff00;
       font-family: Terminal,monospace; }
     header.masthead .intro-text .intro-heading {
       font-size: 75px;
       font-weight: 700;
       line-height: 75px;
-      margin-bottom: 50px;
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } }
 
 .service-heading {
@@ -344,10 +341,12 @@ header.masthead {
       height: 80px;
       margin-left: 0;
       text-align: center;
-      color: white;
+      color: black;
+      font-family: Terminal,monospace;
       border: 7px solid #e9ecef;
       border-radius: 100%;
-      background-color: #fed136; }
+      background-color: #4286f4;
+     }
       .timeline > li .timeline-image h4 {
         font-size: 10px;
         line-height: 14px;
