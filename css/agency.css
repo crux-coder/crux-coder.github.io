@@ -472,11 +472,14 @@ section#contact {
 
 footer {
   padding: 25px 0;
-  text-align: center; }
+  text-align: center;
+  background-color: black;
+   }
   footer span.copyright {
     font-size: 90%;
     line-height: 40px;
     text-transform: none;
+    color: white;
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   footer ul.quicklinks {
     font-size: 90%;
@@ -501,7 +504,8 @@ ul.social-buttons {
     outline: none;
     background-color: #212529; }
     ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-      background-color: #00ff33; }
+      background-color: #33ff00;
+      color: black; }
 
 
   .blink {
