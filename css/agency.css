@@ -5,7 +5,8 @@
  */
 body {
   overflow-x: hidden;
-  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 p {
   line-height: 1.75; }
@@ -27,6 +28,8 @@ h6 {
   font-weight: 700;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
+
+  
 section {
   padding: 100px 0; }
   section h2.section-heading {
@@ -489,8 +492,11 @@ footer {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 ul.social-buttons {
-  margin-bottom: 0; }
-  ul.social-buttons li a {
+  margin-bottom: 0; 
+}
+
+
+ul.social-buttons li a {
     font-size: 20px;
     line-height: 40px;
     display: block;
@@ -503,9 +509,10 @@ ul.social-buttons {
     border-radius: 100%;
     outline: none;
     background-color: #212529; }
-    ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
-      background-color: #33ff00;
-      color: black; }
+ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+  background-color: #33ff00;
+  color: black; 
+}
 
 
   .blink {
