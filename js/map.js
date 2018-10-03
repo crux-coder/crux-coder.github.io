@@ -1,10 +1,10 @@
 let mapWrap = document.querySelector('#map');
-let map;
+
 function initMap() {
     let point = {lat: 44.736226, lng:18.185460};
     let point2 = {lat: 44.737233, lng:18.084839}
 
-    map = new google.maps.Map(mapWrap,{
+    let map = new google.maps.Map(mapWrap,{
         center: point,
         zoom: 7,
         disableDefaultUI: true,
