@@ -1,143 +1,315 @@
-*{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;  
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-  line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-  list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-  quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
+
 
 /* particleground demo */
 
 * {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
-  background: #242c36;
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
-  line-height: 1.3;
-  -webkit-font-smoothing: antialiased;
+    background: #242c36;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
 }
 
 #particles {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 #intro {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  padding: 0 10px;
-  width: 100%;
-  text-align: center;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
 }
+
 h2 {
-  text-transform: uppercase;
-  font-size: 50px;
-  font-weight: 120;
-  color: #ffffff;
-  letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    font-weight: 120;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    display: inline;
 }
+
 h1::after {
-  content: '';
-  width: 80px;
-  display: block;
-  background: #fff;
-  height: 10px;
-  margin: 30px auto;
-  line-height: 1.1;
+    content: '';
+    width: 80px;
+    display: block;
+    background: #fff;
+    height: 10px;
+    margin: 30px auto;
+    line-height: 1.1;
 }
+
 p {
-  margin: 0 0 30px 0;
-  font-size: 24px;
-  font-family: 'Roboto', sans-serif;
+    margin: 0 0 30px 0;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
 }
 
-a:visited {
-  color: #FFFFFF;
+.container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.icon-link {
-  color: #FFFFFF;
+.container .card {
+    border-radius: 10px;
+    height: 100px;
 }
 
-.icon-link:hover {
-  color: #2799d6;
+.container .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.container .card .npm {
+    background: #C23435;
+}
+
+.container .card .linkedin {
+    background: #0A66C2;
+}
+
+.container .card .gmail {
+    background: #DA5148;
+}
+
+.container .card .github {
+    background: #1F1E1E;
+}
+
+.container .card .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.fa .fab .fas {
+    font-size: 2em;
+}
+
+.container i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.container .card .face {
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateX(0);
+}
+
+.container .card:hover .face.face1 {
+    background: #ff0057;
+    transform: translateX(10px);
+}
+
+.container .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.container .card .face.face1 .content i {
+    max-width: 100px;
+}
+
+.container .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateX(-100px);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2 {
+    transform: translateX(0);
+    transform: translateY(-100px);
+}
+
+.container .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+
+.container .card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+}
+
+.container a {
+    text-decoration: none;
+    color: #414141;
+}
+
+.opacity-card {
+    width: max-content;
+    margin: auto;
+    border: 3px solid #2799d6;
+    padding: 0.3em;
+}
+
+.opacity-card-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3em 7em;
+}
+
+.avatar {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    transition: 0.2s;
+    border: 2px solid #2799d6;
+    padding: 0.3em;
 }
 
 @media only screen and (max-width: 1000px) {
-  h1 {
-    font-size: 15px;
-  }
+    h1 {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 100px) {
-  h1 {
-    font-size: 15px;
-  }
-  h1::after {
-    height: 8px;
-  }
+    h1 {
+        font-size: 15px;
+    }
+    h1::after {
+        height: 8px;
+    }
 }
 
 @media only screen and (max-width: 100px) {
-  #intro {
-    padding: 0 10px;
-  }
-  h1 {
-    font-size: 15px;
-  }
-  h1::after {
-    height: 6px;
-  }
-  p {
-    font-size: 18px;
-  }
-  .btn {
-    font-size: 16px;
-  }
+    #intro {
+        padding: 0 10px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    h1::after {
+        height: 6px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 16px;
+    }
 }
 
 @media only screen and (max-width: 100px) {
-  h1 {
-    font-size: 15px;
-  }
-  h1::after {
-    height: 4px;
-  }
+    h1 {
+        font-size: 15px;
+    }
+    h1::after {
+        height: 4px;
+    }
 }
