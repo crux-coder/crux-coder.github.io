@@ -1,82 +1,287 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+<html>
 
 <head>
-    <base target="_blank">
-    <meta charset="UTF-8" />
-    <title>Jasmin Mustafic</title>
-    <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style.scss" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <!-- remember, jQuery is completely optional -->
-    <!-- <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script> -->
-    <script type="text/javascript" src="js/jquery.particleground.js"></script>
-    <script type="text/javascript" src="js/demo.js"></script>
+  <title>Love you, Belma!</title>
+  <link rel="icon" href="heart.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Lovers+Quarrel');
+
+    @keyframes heartfade {
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      z-index: 999;
+      animation: heartfade 6s linear;
+      position: absolute;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: #fc2a62;
+      position: absolute;
+      height: 30px;
+      width: 45px;
+      border-radius: 15px 0px 0px 15px;
+    }
+
+    .heart:before {
+      transform: rotate(45deg);
+    }
+
+    .heart:after {
+      left: 10.5px;
+      transform: rotate(135deg);
+    }
+
+
+    body {
+      background-color: #ffceed;
+      animation-name: beat-back;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .back {}
+
+    .topic {
+      text-align: center;
+      margin: 10px 0px 10px 0px;
+      font-family: Fredericka the Great;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .content-1 {
+      text-align: center;
+      margin: 30px 0px 10px 0px;
+      font-family: Lovers Quarrel;
+      font-size: 40px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .content-2 {
+      text-align: center;
+      margin: 0px 0px 80px 0px;
+      font-family: Lovers Quarrel;
+      font-size: 40px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .footer {
+      text-align: center;
+      margin: 80px 0px 10px 0px;
+      font-family: Fredericka the Great;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .bigHeart {
+      margin: auto;
+      background-color: pink;
+      height: 100px;
+      width: 100px;
+      transform: rotate(-45deg);
+      animation-name: beat;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .bigHeart:after {
+      background-color: pink;
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 0px;
+      left: 50px;
+    }
+
+    .bigHeart:before {
+      background-color: pink;
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: -50px;
+      left: 0px;
+    }
+
+    .bigHeart:hover {
+      background-color: #990000;
+      animation-duration: 200ms;
+      transform: scale(1.3) rotate(-45deg);
+    }
+
+    .bigHeart:hover:before {
+      background-color: #990000;
+    }
+
+    .bigHeart:hover:after {
+      background-color: #990000;
+    }
+
+    .bigHeart:active {}
+
+    @keyframes beat {
+      0% {
+        transform: scale(1) rotate(-45deg);
+      }
+
+      50% {
+        transform: scale(0.8) rotate(-45deg);
+      }
+    }
+
+    @keyframes beat-back {
+      50% {
+        background: #ffe6f2;
+      }
+    }
+
+    .lol {
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
 </head>
 
 <body>
-
-    <div id="particles">
-        <div id="intro">
-            <div class="opacity-card">
-                <div class="opacity-card-content">
-                    <img src="assets/profile.png" alt="Avatar" class="avatar">
-                    <h2 style="font-family: 'Syncopate', sans-serif; font-weight: 10;">Jasmin Mustafic</h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="card">
-                <a href="https://www.linkedin.com/in/jasmin-mustafic-126141151/" target="_blank">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon linkedin">
-                                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="mailto:mustaficjasmin7@gmail.com" target="_blank">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon gmail">
-                                <i class="fas fa-envelope" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="https://www.npmjs.com/~dotundefined" target="_blank">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon npm">
-                                <i class="fab fa-npm" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="card">
-                <a href="https://github.com/dotundefined" target="_blank">
-                    <div class="face face1">
-                        <div class="content">
-                            <div class="icon github">
-                                <i class="fa fa-github-square" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
+  <div class="back text-center">
+    <h1 class="topic">FOR MY DEAR:<br>Belma</h1>
+    <p class="content-1">I am blessed to have you in my life!</p>
+    <p class="content-2">Happy 7th Anniversary!</p>
+    <div class="bigHeart"></div>
+    <p class="footer">LOVE YOU ALWAYS<br>Jasmin</p>
+  </div>
 </body>
+<script>
+
+  var brd = document.createElement("DIV");
+  brd.setAttribute('class', 'lol');
+  document.body.insertBefore(brd, document.getElementById("board"));
+
+  const duration = 3000;
+  const speed = 0.5;
+  const cursorXOffset = 0;
+  const cursorYOffset = -5;
+
+  var hearts = [];
+
+  function generateHeart(x, y, xBound, xStart, scale) {
+    var heart = document.createElement("DIV");
+    heart.setAttribute('class', 'heart');
+    brd.appendChild(heart);
+    heart.time = duration;
+    heart.x = x;
+    heart.y = y;
+    heart.bound = xBound;
+    heart.direction = xStart;
+    heart.style.left = heart.x + "px";
+    heart.style.top = heart.y + "px";
+    heart.scale = scale;
+    heart.style.transform = "scale(" + scale + "," + scale + ")";
+    if (hearts == null)
+      hearts = [];
+    hearts.push(heart);
+    return heart;
+  }
+
+  var down = false;
+  var event = null;
+
+  document.onmousedown = function (e) {
+    down = true;
+    event = e;
+  }
+
+  document.onmouseup = function (e) {
+    down = false;
+  }
+
+  document.onmousemove = function (e) {
+    event = e;
+  }
+
+  document.ontouchstart = function (e) {
+    down = true;
+    event = e.touches[0];
+  }
+
+  document.ontouchend = function (e) {
+    down = false;
+  }
+
+  document.ontouchmove = function (e) {
+    event = e.touches[0];
+  }
+
+  var before = Date.now();
+  var id = setInterval(frame, 5);
+  var gr = setInterval(check, 100);
+
+  function frame() {
+    var current = Date.now();
+    var deltaTime = current - before;
+    before = current;
+    for (i in hearts) {
+      var heart = hearts[i];
+      heart.time -= deltaTime;
+      if (heart.time > 0) {
+        heart.y -= speed;
+        heart.style.top = heart.y + "px";
+        heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 200 + "px";
+      }
+      else {
+        heart.parentNode.removeChild(heart);
+        hearts.splice(i, 1);
+      }
+    }
+  }
+
+  function check() {
+    if (down) {
+      var start = 1 - Math.round(Math.random()) * 2;
+      var scale = Math.random() * Math.random() * 0.8 + 0.2;
+      var bound = 30 + Math.random() * 20;
+      generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
+    }
+  }
+
+  // document.body.addEventListener('touchstart', function () {
+  // });
+
+
+</script>
 
 </html>
