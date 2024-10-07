@@ -35,8 +35,14 @@
       padding: 20px;
       line-height: 1.6;
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr;
       gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 3fr;
+      }
     }
 
     .window {
@@ -132,8 +138,14 @@
 
     .skills-columns {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .skills-columns {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
   </style>
@@ -284,13 +296,6 @@
 <body>
   <div class="container">
     <div class="window">
-      <div class="title-bar">My Portfolio</div>
-      <div class="content">
-        <!-- Content will be populated here -->
-      </div>
-    </div>
-
-    <div class="window navigation">
       <div class="title-bar">Choose a Color Scheme</div>
       <div class="color-scheme-selector">
         <div class="color-scheme" style="background-color: #FFFFFF;" onclick="applyColorScheme('#040F16', '#FFFFFF')"></div>
@@ -308,6 +313,14 @@
         <div class="navigation-item" data-section="contact" onclick="showContent('contact')">Contact</div>
       </div>
     </div>
+    <div class="window">
+      <div class="title-bar">My Portfolio</div>
+      <div class="content">
+        <!-- Content will be populated here -->
+      </div>
+    </div>
+
+    
   </div>
   <div class="footer">
     <p>© 2024 Jasmin Mustafic. All rights reserved.</p>
