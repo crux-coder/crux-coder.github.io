@@ -1,287 +1,317 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width = device-width, initial-scale = 1.0">
-<html>
+<html lang="en">
 
 <head>
-  <title>Love you, Belma!</title>
-  <link rel="icon" href="heart.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasmin Mustafic</title>
+  <link rel="icon" href="bit-face.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Lovers+Quarrel');
-
-    @keyframes heartfade {
-      0% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
+    :root {
+      --background-color: #040F16;
+      --text-color: #00FF00;
+      --border-color: #00FF00;
+      --title-bar-bg-color: #00FF00;
+      --title-bar-text-color: #040F16;
+      --link-hover-bg-color: #00FF00;
+      --link-hover-text-color: #040F16;
+      --selected-nav-bg-color: #00FF00;
     }
-
-    .heart {
-      z-index: 999;
-      animation: heartfade 6s linear;
-      position: absolute;
-    }
-
-    .heart:before,
-    .heart:after {
-      content: "";
-      background-color: #fc2a62;
-      position: absolute;
-      height: 30px;
-      width: 45px;
-      border-radius: 15px 0px 0px 15px;
-    }
-
-    .heart:before {
-      transform: rotate(45deg);
-    }
-
-    .heart:after {
-      left: 10.5px;
-      transform: rotate(135deg);
-    }
-
 
     body {
-      background-color: #ffceed;
-      animation-name: beat-back;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-color: var(--background-color);
+      color: var(--text-color);
     }
 
-    .back {}
-
-    .topic {
-      text-align: center;
-      margin: 10px 0px 10px 0px;
-      font-family: Fredericka the Great;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+    .container {
+      background-color: var(--background-color);
+      font-family: 'Press Start 2P', cursive;
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
     }
 
-    .content-1 {
-      text-align: center;
-      margin: 30px 0px 10px 0px;
-      font-family: Lovers Quarrel;
-      font-size: 40px;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+    .window {
+      border: 2px solid var(--border-color);
+      padding: 20px;
+      background-color: var(--background-color);
     }
 
-    .content-2 {
+    .title-bar {
+      background-color: var(--title-bar-bg-color);
+      color: var(--title-bar-text-color);
+      padding: 5px;
       text-align: center;
-      margin: 0px 0px 80px 0px;
-      font-family: Lovers Quarrel;
-      font-size: 40px;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: var(--text-color);
+      text-decoration: underline;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .content h1, .content h2, .content h3 {
+      color: var(--text-color);
+    }
+
+    .content p {
+      margin: 10px 0;
     }
 
     .footer {
       text-align: center;
-      margin: 80px 0px 10px 0px;
-      font-family: Fredericka the Great;
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
+      margin-top: 20px;
+      color: var(--text-color);
+    }
+
+    a:hover {
+      position: relative;
+      overflow: hidden;
+      color: var(--link-hover-text-color);
+      background-color: var(--link-hover-bg-color);
+      padding: 3px;
+    }
+
+    ::selection {
+      background-color: var(--text-color);
+      color: var(--background-color);
+    }
+
+    .color-scheme-selector {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .color-scheme {
+      width: 30px;
+      height: 30px;
+      border: 2px solid #fff;
+      cursor: pointer;
+    }
+
+    .navigation-items {
+      margin-bottom: 10px;
+      font-size: large;
+    }
+
+    .navigation-item {
+      cursor: pointer;
+      padding: 5px;
+      text-align: left;
+    }
+
+    .navigation-item:hover {
+      background-color: var(--link-hover-bg-color);
+      color: var(--link-hover-text-color);
+      padding: 5px;
       user-select: none;
     }
 
-    .bigHeart {
-      margin: auto;
-      background-color: pink;
-      height: 100px;
-      width: 100px;
-      transform: rotate(-45deg);
-      animation-name: beat;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
+    .selected {
+      background-color: var(--selected-nav-bg-color);
+      color: var(--background-color);
     }
 
-    .bigHeart:after {
-      background-color: pink;
-      content: "";
-      border-radius: 50%;
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      top: 0px;
-      left: 50px;
+    .skills-columns {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
     }
 
-    .bigHeart:before {
-      background-color: pink;
-      content: "";
-      border-radius: 50%;
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      top: -50px;
-      left: 0px;
-    }
-
-    .bigHeart:hover {
-      background-color: #990000;
-      animation-duration: 200ms;
-      transform: scale(1.3) rotate(-45deg);
-    }
-
-    .bigHeart:hover:before {
-      background-color: #990000;
-    }
-
-    .bigHeart:hover:after {
-      background-color: #990000;
-    }
-
-    .bigHeart:active {}
-
-    @keyframes beat {
-      0% {
-        transform: scale(1) rotate(-45deg);
-      }
-
-      50% {
-        transform: scale(0.8) rotate(-45deg);
-      }
-    }
-
-    @keyframes beat-back {
-      50% {
-        background: #ffe6f2;
-      }
-    }
-
-    .lol {
-      position: fixed;
-      height: 100vh;
-      width: 100vw;
-    }
   </style>
+  <script>
+    function applyColorScheme(background, text) {
+      document.documentElement.style.setProperty('--background-color', background);
+      document.documentElement.style.setProperty('--text-color', text);
+      document.documentElement.style.setProperty('--border-color', text);
+      document.documentElement.style.setProperty('--title-bar-bg-color', text);
+      document.documentElement.style.setProperty('--title-bar-text-color', background);
+      document.documentElement.style.setProperty('--link-hover-bg-color', text);
+      document.documentElement.style.setProperty('--link-hover-text-color', background);
+      document.documentElement.style.setProperty('--selected-nav-bg-color', text);
+    }
+
+    function showContent(section) {
+      const content = document.querySelector('.content');
+      let htmlContent = '';
+
+      switch (section) {
+        case 'about':
+          htmlContent = `
+            <h1>About Me</h1>
+            <p>Hello! I'm Jasmin Mustafic, a dedicated developer with a passion for crafting innovative solutions.</p>
+            <p>With over 6 years of freelancing experience, I've tackled projects ranging from simple CLI tools to enterprise-level applications.</p>
+            <p>Beyond coding, I have a deep appreciation for nature and enjoy rock climbing in my free time.</p>
+          `;
+          break;
+        case 'projects':
+          htmlContent = `
+            <h2>Projects</h2>
+            <h3><a href="https://leanfocus.de/" target="_blank">Leanfocus 2.0</a></h3>
+            <p>Description of project 1. This is a mock description, replace it with actual project details.</p>
+            <h3><a href="https://www.eventignite.events/" target="_blank">EventIgnite</a></h3>
+            <p>Description of project 2. This is a mock description, replace it with actual project details.</p>
+            <h3><a href="http://www.numberfit.com/" target="_blank">Numberfit</a></h3>
+            <p>Description of project 1. This is a mock description, replace it with actual project details.</p>
+            <h3><a href="https://store.steampowered.com/app/1585400/Gjallarhorn/" target="_blank">Gjallarhorn</a></h3>
+            <p>Description of project 2. This is a mock description, replace it with actual project details.</p>
+          `;
+          break;
+        case 'skills':
+          htmlContent = `
+            <h2>Skills</h2>
+            <div class="skills-columns">
+              <div>
+              <h4>Frontend</h4>
+                <ul>
+                  <li>React</li>
+                  <li>Next.js</li>
+                  <li>Material UI</li>
+                  <li>Next UI</li>
+                  <li>Chakra UI</li>
+                  <li>Bootstrap</li>
+                  <li>React Native</li>
+                  <li>Flutter</li>
+                  <li>d3.js</li>
+                  <li>Chart.js</li>
+                  <li>Tailwind</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Backend</h4>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Express</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Databases</h4>
+                <ul>
+                  <li>Supabase</li>
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                  <li>MongoDB</li>
+                  <li>InfluxDB</li>
+                </ul>
+              </div>
+              <div>
+                <h4>DevOps</h4>
+                <ul>
+                  <li>Docker</li>
+                  <li>AWS</li>
+                  <li>Railway</li>
+                  <li>Vercel</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Other</h4>
+                <ul>
+                  <li>PDFKit</li>
+                  <li>Lodash</li>
+                  <li>Moment.js</li>
+                </ul>
+              </div>
+            </div>
+          `;
+          break;
+        case 'contact':
+          htmlContent = `
+            <h2>Contact</h2>
+            <p>Feel free to connect with me on:</p>
+            <br />
+            <p>
+              <a href="https://github.com/crux-coder" target="_blank">GitHub</a>
+            </p>
+            <p> 
+              <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </p>
+            <p>
+              <a href="mailto:mustaficjasmin7@gmail.com">Email</a>
+            </p>
+          `;
+          break;
+        default:
+          htmlContent = '<h1>Welcome to My Portfolio</h1>';
+      }
+
+      content.innerHTML = htmlContent;
+      updateNavigation(section);
+    }
+
+    function updateNavigation(selectedSection) {
+      const navItems = document.querySelectorAll('.navigation-item');
+      const url = new URL(window.location);
+      url.searchParams.set('section', selectedSection);
+      window.history.pushState({}, '', url);
+      navItems.forEach(item => {
+        item.classList.remove('selected');
+        if (item.dataset.section === selectedSection) {
+          item.classList.add('selected');
+        }
+      });
+    }
+
+    function getSectionFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('section') || 'about';
+    }
+
+    window.onload = function() {
+      const section = getSectionFromUrl();
+      showContent(section);
+    }
+  </script>
 </head>
 
 <body>
-  <div class="back text-center">
-    <h1 class="topic">FOR MY DEAR:<br>Belma</h1>
-    <p class="content-1">I am blessed to have you in my life!</p>
-    <p class="content-2">Happy 7th Anniversary!</p>
-    <div class="bigHeart"></div>
-    <p class="footer">LOVE YOU ALWAYS<br>Jasmin</p>
+  <div class="container">
+    <div class="window">
+      <div class="title-bar">My Portfolio</div>
+      <div class="content">
+        <!-- Content will be populated here -->
+      </div>
+    </div>
+
+    <div class="window navigation">
+      <div class="title-bar">Choose a Color Scheme</div>
+      <div class="color-scheme-selector">
+        <div class="color-scheme" style="background-color: #FFFFFF;" onclick="applyColorScheme('#040F16', '#FFFFFF')"></div>
+        <div class="color-scheme" style="background-color: #FF5733;" onclick="applyColorScheme('#040F16', '#FF5733')"></div>
+        <div class="color-scheme" style="background-color: #3498DB;" onclick="applyColorScheme('#040F16', '#3498DB')"></div>
+        <div class="color-scheme" style="background-color: #00FF00;" onclick="applyColorScheme('#040F16', '#00FF00')"></div>
+        <div class="color-scheme" style="background-color: #FFA500;" onclick="applyColorScheme('#040F16', '#FFA500')"></div>
+      </div>
+
+      <div class="title-bar">Navigation</div>
+      <div class="navigation-items">
+        <div class="navigation-item" data-section="about" onclick="showContent('about')">About Me</div>
+        <div class="navigation-item" data-section="projects" onclick="showContent('projects')">Projects</div>
+        <div class="navigation-item" data-section="skills" onclick="showContent('skills')">Skills</div>
+        <div class="navigation-item" data-section="contact" onclick="showContent('contact')">Contact</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>© 2024 Jasmin Mustafic. All rights reserved.</p>
   </div>
 </body>
-<script>
-
-  var brd = document.createElement("DIV");
-  brd.setAttribute('class', 'lol');
-  document.body.insertBefore(brd, document.getElementById("board"));
-
-  const duration = 3000;
-  const speed = 0.5;
-  const cursorXOffset = 0;
-  const cursorYOffset = -5;
-
-  var hearts = [];
-
-  function generateHeart(x, y, xBound, xStart, scale) {
-    var heart = document.createElement("DIV");
-    heart.setAttribute('class', 'heart');
-    brd.appendChild(heart);
-    heart.time = duration;
-    heart.x = x;
-    heart.y = y;
-    heart.bound = xBound;
-    heart.direction = xStart;
-    heart.style.left = heart.x + "px";
-    heart.style.top = heart.y + "px";
-    heart.scale = scale;
-    heart.style.transform = "scale(" + scale + "," + scale + ")";
-    if (hearts == null)
-      hearts = [];
-    hearts.push(heart);
-    return heart;
-  }
-
-  var down = false;
-  var event = null;
-
-  document.onmousedown = function (e) {
-    down = true;
-    event = e;
-  }
-
-  document.onmouseup = function (e) {
-    down = false;
-  }
-
-  document.onmousemove = function (e) {
-    event = e;
-  }
-
-  document.ontouchstart = function (e) {
-    down = true;
-    event = e.touches[0];
-  }
-
-  document.ontouchend = function (e) {
-    down = false;
-  }
-
-  document.ontouchmove = function (e) {
-    event = e.touches[0];
-  }
-
-  var before = Date.now();
-  var id = setInterval(frame, 5);
-  var gr = setInterval(check, 100);
-
-  function frame() {
-    var current = Date.now();
-    var deltaTime = current - before;
-    before = current;
-    for (i in hearts) {
-      var heart = hearts[i];
-      heart.time -= deltaTime;
-      if (heart.time > 0) {
-        heart.y -= speed;
-        heart.style.top = heart.y + "px";
-        heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 200 + "px";
-      }
-      else {
-        heart.parentNode.removeChild(heart);
-        hearts.splice(i, 1);
-      }
-    }
-  }
-
-  function check() {
-    if (down) {
-      var start = 1 - Math.round(Math.random()) * 2;
-      var scale = Math.random() * Math.random() * 0.8 + 0.2;
-      var bound = 30 + Math.random() * 20;
-      generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
-    }
-  }
-
-  // document.body.addEventListener('touchstart', function () {
-  // });
-
-
-</script>
 
 </html>
